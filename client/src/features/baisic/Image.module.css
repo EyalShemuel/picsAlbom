@@ -1,0 +1,20 @@
+.image{
+    margin: 1%;
+    padding: 0.5%;
+    border: 1px 1px black;
+}
+
+.large{
+ width: 50%;
+ /* height: 50%; */
+}
+
+.medume{
+    width: 25%;
+   /*  height: 25%; */
+}
+
+.small{
+    width: 10%;
+   /*  height: 10%; */
+}
