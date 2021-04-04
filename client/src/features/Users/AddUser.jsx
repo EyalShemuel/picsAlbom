@@ -1,7 +1,8 @@
+import { nanoid } from '@reduxjs/toolkit';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addUser } from './UsersSlice';
-import { nanoid } from '@reduxjs/toolkit';
+import { addUser } from '../../Store/UserSlice';
+import Users from './Users';
 
 function AddUser() {
   const dispatch = useDispatch();
@@ -13,13 +14,14 @@ function AddUser() {
   };
 
   return (
-    <div className="add-user">
-      <h1>Register section</h1>
+    <div className="main-Section">
+     
       <p>please enter user Name</p>
       <input value={userName} onChange={(e) => setUserName(e.target.value)} placeholder='Enter User Name'/>
       <input type='url' value={PicSrc} onChange={(e) => setPicSrc(e.target.value)} placeholder='Enter Link to Profile Pic'/>
 
       <button onClick={submit}>OK</button>
+      <Users />
     </div>
   );
 }

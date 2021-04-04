@@ -1,35 +1,47 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link,useParams } from 'react-router-dom';
 import './App.css';
-import Button from './features/baisic/Button';
-import AlbomPage from './features/Albom/AlbomPage';
 
+// components
+import Button from './features/basics/Button';
+import AlbumPage from './features/Album/AlbumPage';
 import AddUser from './features/Users/AddUser';
+import Users from './features/Users/Users';
+import LongMenu from './features/basics/menu'
+
 //https://www.youtube.com/watch?v=xSAnMp5UxLI&t=599s
 function App() {
   return (
     <Router>
-     
+     <LongMenu />
       <div className="App">
+      
+      <header className="App-header">
+        <h1 style={{marginTop:"0"}}>Image Albums</h1>
+      </header>
+
+
       <Switch>
         <Route path="/AddUser">
           <AddUser />
         </Route>
-        <Route path="/Albom">
-            <AlbomPage />
+        <Route path="/Albom/:userID">
+            <AlbumPage />
           </Route> 
-      {/*     <Route path="/">
-            <Cars />
-          </Route> */}
+          <Route exact path="/">
+            <Users />
+          </Route>
       </Switch>
-        <header className="App-header">
-          {/* <Image 
-        src='https://www.focus2move.com/wp-content/uploads/2020/01/Tesla-Roadster-2020-1024-03-696x522.jpg.webp'
-        size='S'/> */}
+       
+       
+        
          
-            <Link to="/AddUser" style={{textDecoration:"none"}}> <Button value="+" /></Link> 
+         <footer className='App-footer'>
+         <Link to="/AddUser" style={{textDecoration:"none"}}> <Button value="+" /></Link> 
+         </footer>
+           
          
-        </header>
+      
       </div>
 
       
@@ -38,3 +50,8 @@ function App() {
 }
 
 export default App;
+
+
+  {/* <Image 
+        src='https://www.focus2move.com/wp-content/uploads/2020/01/Tesla-Roadster-2020-1024-03-696x522.jpg.webp'
+        size='S'/> */}
