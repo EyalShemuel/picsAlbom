@@ -4,13 +4,13 @@ import styles from './Button.module.css';
 
 
 const Button = (props) => {
-  const dispatch = useDispatch();
+  /* const dispatch = useDispatch(); */
     return (
         <div className={styles.row}>
         <button
           className={styles.button}
           aria-label="Increment value"
-          onClick={() => dispatch(`${props.command}`)}
+          /* onClick={() => dispatch(`${props.command}`)} */
         >
          { props.value}
         </button>
