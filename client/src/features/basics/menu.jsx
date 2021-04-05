@@ -3,6 +3,7 @@ import IconButton from '@material-ui/core/IconButton';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import { Link } from 'react-router-dom';
 
 const options = [
   'Home',
@@ -46,11 +47,14 @@ export default function LongMenu() {
           },
         }}
       >
-        {options.map((option) => (
-          <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
-            {option}
+       
+          <MenuItem key='home'  onClick={handleClose} component={Link} to="/">
+           Home
           </MenuItem>
-        ))}
+          <MenuItem key='Add User'  onClick={handleClose} component={Link} to="/AddUser">
+          Add User
+          </MenuItem>
+        
       </Menu>
     </div>
   );

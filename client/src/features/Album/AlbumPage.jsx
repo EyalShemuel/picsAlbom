@@ -1,10 +1,11 @@
 import React from "react";
 
 import { useSelector, useDispatch } from "react-redux";
-import { BrowserRouter as useParams } from "react-router-dom";
 
 import { imageSelectors } from "../../Store/ImageSlice";
 import Card from "./Card";
+
+import { BrowserRouter as Router, Switch, Route, Link,useParams } from 'react-router-dom';
 
 const AlbumPage = ({title,src,description}) => {
     let { userID } = useParams();

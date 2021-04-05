@@ -25,7 +25,7 @@ function App() {
         <Route path="/AddUser">
           <AddUser />
         </Route>
-        <Route path="/Albom/:userID">
+        <Route path="/Album/:userID">
             <AlbumPage />
           </Route> 
           <Route exact path="/">
@@ -36,9 +36,7 @@ function App() {
        
         
          
-         <footer className='App-footer'>
-         <Link to="/AddUser" style={{textDecoration:"none"}}> <Button value="+" /></Link> 
-         </footer>
+        
            
          
       
