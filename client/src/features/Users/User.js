@@ -6,15 +6,19 @@ const User = ({ id, userName, userPic }) => {
   return (
     <div
       style={{
-        border: "1px solid black",
+        borderBottom: "1px solid black",
+        borderRight: "1px solid black",
         margin: "0.2%",
         padding: "1%",
-        width: "20%",
+        width: "150px",
         cursor: "pointer",
+        borderRadius: "7px",
+        boxShadow: " 2px 1px 1px "
       }}
     >
       <Link to={'/Album/userID:'+id}>
-        <Image src={userPic} size="M" />
+         {/* image props contain link , sizeWidth(S,M,L) , borderRadius */}
+        <Image src={userPic} size="L" radius='50%' />
         <p>{userName}</p>
       </Link>
     </div>

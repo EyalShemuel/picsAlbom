@@ -26,9 +26,9 @@ const Users = (props) => {
   }
 
   return (
-    <div>
+    <div >
       <h1>Users</h1>
-      <div style={{ display: "flex", flexDirection: "row" }}>{usersList}</div>
+      <div className="users-grid">{usersList}</div>
     </div>
   );
 };

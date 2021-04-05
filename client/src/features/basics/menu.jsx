@@ -54,6 +54,9 @@ export default function LongMenu() {
           <MenuItem key='Add User'  onClick={handleClose} component={Link} to="/AddUser">
           Add User
           </MenuItem>
+          <MenuItem key='Add User'  onClick={handleClose} component={Link} to="/AddPictures">
+          Add Pictures
+          </MenuItem>
         
       </Menu>
     </div>
