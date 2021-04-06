@@ -1,11 +1,6 @@
-import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
-  useParams,
-} from "react-router-dom";
+import React , { useState } from "react";
+
+import {  BrowserRouter as Router,  Switch,  Route} from "react-router-dom";
 import "./App.css";
 
 // components
@@ -16,9 +11,12 @@ import Users from "./features/Users/Users";
 import LongMenu from "./features/basics/menu";
 
 function App() {
+  const [CurrentUser,setCurrentUser] = useState('');
   return (
     <Router>
-      <LongMenu />
+      <LongMenu
+      CurrentUser = {CurrentUser}
+      />
       <div className="App-header">
         <h1>Image Albums</h1>
       </div>
@@ -27,15 +25,9 @@ function App() {
           <Route path="/AddUser">
             <AddUser />
           </Route>
-          <Route path="/AddPictures">
-            <AddPictures />
-          </Route>
-          <Route path="/Album/:userID">
-            <AlbumPage />
-          </Route>
-          <Route exact path="/">
-            <Users />
-          </Route>
+          <Route exact path="/"render = {props => <Users {...props} />}/> 
+          <Route path="/AddPictures/:userID" render = {props => <AddPictures {...props} />}/>
+          <Route path="/Album/:userID" render = {props => <AlbumPage CurrentUser={CurrentUser} setCurrentUser={setCurrentUser} /> }/>                           
         </Switch>
       </div>
     </Router>
@@ -44,8 +36,3 @@ function App() {
 
 export default App;
 
-{
-  /* <Image 
-        src='https://www.focus2move.com/wp-content/uploads/2020/01/Tesla-Roadster-2020-1024-03-696x522.jpg.webp'
-        size='S'/> */
-}

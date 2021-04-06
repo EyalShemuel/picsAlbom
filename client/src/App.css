@@ -41,3 +41,11 @@
  place-items: center;
 
 }
+
+.image-form{
+  margin: auto;
+  display: flex;
+  flex-direction:column;
+  min-width: 400px;
+  max-width:700px
+}

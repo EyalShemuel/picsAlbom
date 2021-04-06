@@ -1,7 +1,7 @@
 import { nanoid } from '@reduxjs/toolkit';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addUser } from '../../Store/UserSlice';
+import { addUser,removeUser } from '../../Store/UserSlice';
 
 
 function AddUser() {
@@ -14,6 +14,8 @@ function AddUser() {
     event.target.children.userName.value = '';
      event.target.children.url.value = '';    
     dispatch(addUser({ id: nanoid(), user: userName, userPic: PicSrc }));
+    dispatch(removeUser({ id: nanoid()}));
+
     alert('User Adedd Successfully')
   };
 

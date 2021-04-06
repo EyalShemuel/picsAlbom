@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "../basics/Image";
+// eslint-disable-next-line
 import { BrowserRouter as Router, Switch, Route, Link,useParams } from 'react-router-dom';
 
 const User = ({ id, userName, userPic }) => {
@@ -16,7 +17,7 @@ const User = ({ id, userName, userPic }) => {
         boxShadow: " 2px 1px 1px "
       }}
     >
-      <Link to={'/Album/userID:'+id}>
+      <Link to={'/Album/'+id}>
          {/* image props contain link , sizeWidth(S,M,L) , borderRadius */}
         <Image src={userPic} size="L" radius='50%' />
         <p>{userName}</p>

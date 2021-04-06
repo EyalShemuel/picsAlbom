@@ -2,8 +2,10 @@ import { nanoid } from "@reduxjs/toolkit";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addImage } from "../../Store/ImageSlice";
-
+// eslint-disable-next-line
+import { BrowserRouter as Router, Switch, Route, Link,useParams } from 'react-router-dom';
 const AddPictures = () => {
+    let { userID } = useParams();
   const dispatch = useDispatch();
 
   const [title, setTitle] = useState("");
@@ -15,14 +17,14 @@ const AddPictures = () => {
     event.target.children.title.value = "";
     event.target.children.url.value = ""; 
     event.target.children.description.value = ""; 
-    dispatch(addImage({ id: nanoid(), title: title, userPic: picSrc,description: Description }));
+    dispatch(addImage({ id: nanoid(),userID:userID, title: title, userPic: picSrc,description: Description }));
     alert("Image Adedd Successfully");
   };
 
   return (
     <div className="main-Section">
-      <p>please enter user Name</p>
-      <form onSubmit={mySubmitHandler}>
+      <p>please enter Image Details</p>
+      <form className="image-form" onSubmit={mySubmitHandler}>
         <input
           value={title}
           name="title"
@@ -36,7 +38,7 @@ const AddPictures = () => {
           onChange={(e) => setPicSrc(e.target.value)}
           placeholder="Enter Link to the Image"
         />
-        <label for="description">Add description:</label>
+        <label htmlFor="description">Add description:</label>
         <textarea
           id="description"
           name="description"

@@ -9,10 +9,11 @@ export  const userSelectors = userAdapter.getSelectors(state => state.users)
   initialState: userAdapter.getInitialState({}),
   reducers: {
     addUser: userAdapter.addOne,
+    removeUser: userAdapter.removeOne,
   },
 });
 
-export const { addUser } = userSlice.actions;
+export const { addUser , removeUser} = userSlice.actions;
 
 
 
